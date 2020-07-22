@@ -8,7 +8,10 @@ a[0]
 
 np.array(  [   [1, 2],    [3, 4],    [5, 6]    ]   )
 
-a = np.array([1, 2, 3, 4, 5, 6], ndmin = 2)  ## ???
+# ndim specifies the minimum number of dimensions that the resulting array should have.
+# Ones will be pre-pended to the shape as needed to meet this requirement.
+a = np.array([1, 2, 3, 4, 5, 6], ndmin = 2)
+a = np.array([[1, 2], [3, 4], [5, 6]], ndmin = 4)
 
 a = np.array([[1, 2, 3], [1, 2, 3]], dtype = float)
 
