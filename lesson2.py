@@ -31,7 +31,8 @@ b = Auto()
 
 b.get_anz_raeder()
 
-
+def myfct():
+    return None
 
 import pandas
 
@@ -170,3 +171,77 @@ mtcars2.sort_values(by=['gear', 'carb', 'disp'], ascending=[True, False, True]).
 
 mtcars2.sort_index(ascending=False).head()
 
+
+import urllib.request
+urllib.request.urlretrieve("https://vincentarelbundock.github.io/" +
+                           "Rdatasets/csv/datasets/airquality.csv",
+                           "airquality.csv")
+air_quality=pd.read_csv("airquality.csv")
+
+air_quality = air_quality.drop("Unnamed: 0", axis=1) #droping ghost index
+
+air_quality[['Month', 'Day', 'Ozone', 'Solar.R', 'Wind', 'Temp']]
+
+air_quality.head()
+long_airq = pd.melt(air_quality, id_vars=['Month','Day'], value_vars=['Wind', 'Temp'])
+ #       >>> pd.melt(df, id_vars=['A'], value_vars=['B'])
+long_airq.sort_values(by=['Month', 'Day'])
+
+wide_airq = long_airq.pivot_table(index=['Month', 'Day'], columns="variable", values='value')
+wide_airq.reset_index()
+
+
+
+
+row_to_add = pd.DataFrame(data=np.array(([50,200,8,70,5,1],)),
+                          columns=["Ozone","Solar.R","Wind","Temp","Month", "Day"])
+air_quality.append(row_to_add).tail()
+
+# BAD:
+big_df = pd.DataFrame()
+for i in range(10):
+    small_df = fct()
+    big_df = big_df.append(small_df)
+
+# GOOD:
+big_df_list = []  # Liste von DataFrames (jedes Element ist ein DataFrame)
+for i in range(10):
+    small_df = fct()
+    big_df_list.append(small_df)
+big_df = pd.concat(big_df_list)
+
+air_quality['new_column']=0
+air_quality.head()
+
+number_of_rows = air_quality.shape[0]
+new_array = np.arange(number_of_rows)
+air_quality['new_column_2'] = new_array
+air_quality.head()
+
+a = np.arange(9).reshape((3,3))
+b = np.arange(9,18).reshape((3,3))
+df_a = pd.DataFrame(a, columns=["a","b","c"])
+df_b = pd.DataFrame(b, columns=["a","e","f"])
+
+pd.concat((df_a, df_b), axis=1)
+pd.concat((df_a, df_b), axis=0)
+
+df_b=pd.DataFrame(b,columns=["a","c","b"])
+pd.concat((df_a, df_b), axis=0) # concatenate rows
+
+
+
+import urllib.request
+urllib.request.urlretrieve('https://vincentarelbundock.github.io/Rdatasets/csv/carData/States.csv',
+                           "States.csv")
+urllib.request.urlretrieve('https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/USstateAbbreviations.csv',
+                           "USstateAbbreviations.csv")
+
+edu_states=pd.read_csv("States.csv")
+edu_states=edu_states.rename(columns={"Unnamed: 0": "abr"})
+edu_states=edu_states[["abr","pop", "SATV"]].head()
+edu_states
+
+abr_states=pd.read_csv("USstateAbbreviations.csv")
+abr_states=abr_states[["Name","ANSI.letters"]].head()
+abr_states
