@@ -245,3 +245,41 @@ edu_states
 abr_states=pd.read_csv("USstateAbbreviations.csv")
 abr_states=abr_states[["Name","ANSI.letters"]].head()
 abr_states
+
+pd.merge(edu_states, abr_states, left_on="abr", right_on="ANSI.letters")
+pd.merge(edu_states, abr_states, left_on="abr", right_on="ANSI.letters", how='outer')
+pd.merge(edu_states, abr_states, left_on="abr", right_on="ANSI.letters", how='right')
+pd.merge(edu_states, abr_states, left_on="abr", right_on="ANSI.letters", how='left')
+
+
+
+mtcars3 = mtcars2.drop(["drat", "vs", "disp"], axis=1)
+mtcars3_stats = mtcars3.groupby(by=["cyl"]).describe()
+
+
+mtcars3_statT = mtcars3_stats.\
+    transpose().\
+    reset_index().\
+    rename(columns={'level_0': 'column_name', 'level_1': 'stat'})
+
+mtcars3_statT = (mtcars3_stats.
+                 transpose().
+                 reset_index().
+                 rename(columns={'level_0': 'column_name', 'level_1': 'stat'}))
+
+mtcars3.groupby(by=["cyl"]).mean()
+
+mtcars3.groupby(by=["cyl"]).aggregate(np.sum)
+
+mtcars3.groupby(by=["cyl"]).agg([np.sum, np.mean, np.std])
+
+mtcars3.groupby(by=["cyl", "am"]).agg([np.sum, np.mean, np.std])
+
+
+
+mtcars.query('hp > 100').\
+    sort_values(by=['gear', 'name'], ascending=True).\
+    loc[:, ['hp','gear','mpg']].\
+    assign(liter_km = lambda x: x.mpg * (1.6093/3.785441)).\
+    groupby('gear').\
+    mean()
