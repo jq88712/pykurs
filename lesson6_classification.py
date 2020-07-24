@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_moons
 from sklearn.svm import SVC
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, r2_score
 import plotnine as pn
 
 classifier = SVC(gamma=2, C=1)
@@ -11,6 +11,10 @@ classifier = SVC(gamma=2, C=1)
 data, label = make_moons(n_samples=(100, 100), noise=0.3, random_state=0)
 
 X_train, X_test, y_train, y_test = train_test_split(data, label, test_size=.3, random_state=42)
+
+
+
+
 
 classifier.fit(X_train, y_train)
 
