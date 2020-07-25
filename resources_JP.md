@@ -5,8 +5,18 @@ https://github.com/prubach/Python_Winter_2019_2
 
 ## Books
 
-- Vanderplas 2016 - Python data science handbook -> Download: https://hspforzheimde.sharepoint.com/:b:/s/BLANCOMasterarbeit-Ausarbeitung/ERic8cN6q8lPrHV7G9_co74BqpY70MHPj4g4nkb4ZNo7Yg?e=x2YhbN
-- Geron 2017 - Hands-On Machine Learning -> Download: https://hspforzheimde.sharepoint.com/:b:/s/BLANCOMasterarbeit-Ausarbeitung/EeSfDxq2STJKqrMkz7oBDA8BGW6-geDbGofz9X8668TeGg?e=lr72eK
+**Python Data Science Handbook**
+
+- VanderPlas, Jake (2016)
+- Titel: Python Data Science Handbook
+- Download: https://hspforzheimde.sharepoint.com/:b:/s/BLANCOMasterarbeit-Ausarbeitung/ERic8cN6q8lPrHV7G9_co74BqpY70MHPj4g4nkb4ZNo7Yg?e=x2YhbN
+- Online: https://jakevdp.github.io/PythonDataScienceHandbook/
+
+**Hands-On Machine Learning**
+
+- Geron, Aurelien (2017)
+- Titel: Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques for Building Intelligent Systems
+- Download: https://hspforzheimde.sharepoint.com/:b:/s/BLANCOMasterarbeit-Ausarbeitung/EeSfDxq2STJKqrMkz7oBDA8BGW6-geDbGofz9X8668TeGg?e=lr72eK
 
 ## Links to interesting programming topics
 
