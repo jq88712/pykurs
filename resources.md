@@ -58,6 +58,10 @@
 
 ## Projects
 
+- https://machinelearningmastery.com/data-preparation-gradient-boosting-xgboost-python/
+
+**Daten / Projekte zum Thema "Marketing"**
+
 - Wohnungspreise: https://www.datacamp.com/community/tutorials/xgboost-in-python
 - Autopreise von Polos: https://towardsdatascience.com/predicting-used-car-prices-with-machine-learning-fea53811b1ab
 - Daten von KDD Cup (KDD ist eine, oder die, angesehenste Konferenz für Machine Learning) zur Bestimmung von Churn: https://www.kdd.org/kdd-cup/view/kdd-cup-2009/Data
